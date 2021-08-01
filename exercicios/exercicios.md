@@ -18,10 +18,10 @@ https://github.com/jonathanbaraldi/devops
 
 ```sh
 
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - RancherSerber - HOST A
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
+$ ssh -i devops-ninja.pem ubuntu@3.235.151.136  - RancherServer - HOST A
+$ ssh -i devops-ninja.pem ubuntu@3.228.6.59  - k8s-1         - HOST B
+$ ssh -i devops-ninja.pem ubuntu@3.238.139.163  - k8s-2         - HOST C
+$ ssh -i devops-ninja.pem ubuntu@3.219.45.76  - k8s-3         - HOST D
 
 $ sudo su
 $ curl https://releases.rancher.com/install-docker/19.03.sh | sh
