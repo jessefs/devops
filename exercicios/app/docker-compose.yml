@@ -5,7 +5,7 @@ services:
     
     nginx:
         restart: "always"
-        image: jessefs18/nginx:devops
+        image: <dockerhub_id>/nginx:devops
         ports:
             - "80:80"
         links:
@@ -15,7 +15,7 @@ services:
             
     redis:
         restart: "always"
-        image: jessefs18/redis:devops
+        image: <dockerhub_id>/redis:devops
         ports:
             - 6379
 
@@ -34,7 +34,7 @@ services:
 
     node:
         restart: "always"
-        image: jessefs18/node:devops
+        image: <dockerhub_id>/node:devops
         links:
             - redis
             - mysql

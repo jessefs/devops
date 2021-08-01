@@ -52,7 +52,7 @@ $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 Com os pacotes instalados, agora iremos baixar o código fonte e começaremos a fazer os build's e rodar os containers.
 ```sh
 $ cd /home/ubuntu
-$ git clone https://github.com/jonathanbaraldi/devops
+$ git clone https://github.com/jessefs/devops.git
 $ cd devops/exercicios/app
 ```
 
@@ -61,7 +61,7 @@ $ cd devops/exercicios/app
 Iremos fazer o build da imagem do Redis para a nossa aplicação.
 ```sh
 $ cd redis
-$ docker build -t <dockerhub-user>/redis:devops .
+$ docker build -t <dockerhub_id>/redis:devops .
 $ docker run -d --name redis -p 6379:6379 <dockerhub-user>/redis:devops
 $ docker ps
 $ docker logs redis
@@ -74,7 +74,7 @@ Com isso temos o container do Redis rodando na porta 6379.
 Iremos fazer o build do container do NodeJs, que contém a nossa aplicação.
 ```sh
 $ cd ../node
-$ docker build -t <dockerhub-user>/node:devops .
+$ docker build -t <dockerhub_id>/node:devops .
 ```
 Agora iremos rodar a imagem do node, fazendo a ligação dela com o container do Redis.
 ```sh
@@ -90,7 +90,7 @@ Com isso temos nossa aplicação rodando, e conectada no Redis. A api para verif
 Iremos fazer o build do container do nginx, que será nosso balanceador de carga.
 ```sh
 $ cd ../nginx
-$ docker build -t <dockerhub-user>/nginx:devops .
+$ docker build -t <dockerhub_id>/nginx:devops .
 ```
 Criando o container do nginx a partir da imagem e fazendo a ligação com o container do Node
 ```sh
@@ -187,7 +187,7 @@ Adicionar o host B e host C.
 
 Pegar o seu comando no seu rancher.
 ```sh
-$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.4.3 --server https://rancher.dev-ops-ninja.com --token 8xf5r2ttrvvqcxdhwsbx9cvb7s9wgwdmgfbmzr4mt7smjbg4jgj292 --ca-checksum 61ac25d1c389b26c5c9acd98a1c167dbfb394c6c1c3019d855901704d8bae282 --node-name k8s-1 --etcd --controlplane --worker
+$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.4.3 --server https://rancher.emporiozinhodonagirafa.com --token 2h55m872wvqp7ndhrkhxqhl8dfz6tq4z7c8kdf76v7d4k656fbjcjl --ca-checksum ed8be7ae4dbc5c5eb596c4e436c8ed6e9595f270f031bfd50f22ecd802f0a613 --node-name k8s-3 --etcd --controlplane --worker
 ```
 Será um cluster com 3 nós.
 Navegar pelo Rancher e ver os painéis e funcionalidades.
